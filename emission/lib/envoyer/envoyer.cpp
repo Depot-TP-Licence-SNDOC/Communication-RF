@@ -11,8 +11,10 @@ void envoyerTrame(String trame)
 }
 
 u_int8_t identificateurDeTrame = 0;
+float temperature = 0.0;
+float hygrometrie = 0.0;
 
-String creerTrame(u_int8_t identificateurDeTrame, float temperature, float hygrometrie)
+String creerTrame()
 {
     identificateurDeTrame = identificateurDeTrame + 1;
     temperature = random(20,30);
