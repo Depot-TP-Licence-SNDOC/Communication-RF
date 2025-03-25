@@ -1,13 +1,15 @@
 #include "envoyer.h"
 
-void initialiserLiaisonSerie(u_int8_t vitesseDeTransmission)
+void initialiserLiaisonSerie(u_int8_t rx, u_int8_t tx, u_int16_t vitesseDeTransmission)
 {
-    Serial.begin(vitesseDeTransmission);
+    pinMode(rx, INPUT);
+    pinMode(tx, OUTPUT);
+    mySerial.begin(vitesseDeTransmission);
 }
 
 void envoyerTrame(String trame)
 {
-    Serial.print(trame);
+    mySerial.print(trame);
 }
 
 u_int8_t identificateurDeTrame = 0;
